@@ -1,0 +1,64 @@
+<mvc:View
+	controllerName="dlw.hackaton_rgpd.controller.Main"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified" >
+	<Page title="{i18n>title}">
+		<content>
+			<FlexBox
+				id="flexBoxHint"
+				width="100%"
+				visible="false"
+				alignItems="Center"
+				justifyContent="Center" >
+				<Title level="H3" text="Error!" class="imageErrorTitle " />
+				<Text width="100%" text="Choose the image you want to publish"></Text>
+			</FlexBox>
+			<FlexBox
+				id="uploadBox"
+				class="workListBox"
+				alignItems="Center"
+				justifyContent="Center"
+				width="100%"
+				height="100%"
+				visible="true" >
+				<u:FileUploader
+					id="fileUploader"
+					name="myFileUpload"
+					tooltip="Choose the image you want ot publish"
+					typeMissmatch="handleTypeMissmatch"
+					class="fileUploaderStyle"
+					buttonOnly="true"
+					change="handleValueChange"
+					fileType="jpg,jpeg,png"
+					placeholder="Choose a file for Upload..."
+					buttonText="Browse" style="Transparent"
+					icon="sap-icon://camera"
+					iconOnly="true"></u:FileUploader>
+				<FlexBox
+					id="vBoxImage"
+					width="100%"
+					visible="false"
+					alignItems="Center"
+					justifyContent="Center">
+					<items>
+						<Image
+							src="{/image}"
+							densityAware="false"
+							class="imagevh" >
+						</Image>
+					</items>
+				</FlexBox>
+			</FlexBox>
+			<Table
+				id="table"
+				visible="false"
+				width="auto"
+				items="{path: '/results'}">
+				<items>
+					<ColumnListItem></ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

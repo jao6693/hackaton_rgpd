@@ -1,0 +1,13 @@
+<mvc:View 
+	controllerName="dlw.hackaton_rgpd.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" >
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<!-- let the routing guide you to the correct page -->
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
