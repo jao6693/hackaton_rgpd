@@ -20,12 +20,20 @@
       "description": "SAPUI5 Test Resources"
     },
     {
-      "path": "/ml",
+      "path": "/ml-face",
       "target": {
         "type": "destination",
-        "name": "sapui5ml-api"
+        "name": "sapui5ml-face-api"
       },
-      "description": "ML API description"
+      "description": "ML Face API description"
+    },
+    {
+      "path": "/ml-similarity",
+      "target": {
+        "type": "destination",
+        "name": "sapui5ml-similarity-api"
+      },
+      "description": "ML Similarity API description"
     }
   ],
   "sendWelcomeFileRedirect": true,

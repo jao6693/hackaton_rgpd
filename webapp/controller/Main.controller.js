@@ -77,62 +77,64 @@ sap.ui.define([
 			if(oEvent.getParameters().files[0] !== undefined) {
 				reader.readAsDataURL(oEvent.getParameters().files[0]);
 	
-				var cells = new Array(urls.length);
-				for (var i = 0; i < urls.length; i++) {
-					table.addColumn(new sap.m.Column({
+				// var cells = new Array(urls.length);
+				var cells = new Array(0);
+				// for (var i = 0; i < urls.length; i++) {
+				table.addColumn(new sap.m.Column({
 	
-						header: new sap.m.FlexBox({
-							alignItems: "Center",
-							justifyContent: "Center",
-							items: [
-								new sap.m.VBox({
-									items: [
-										new sap.m.Label({
-											textAlign: "Center",
-											width: "100%",
-											text: urls[i].name
-										}),
-										new sap.m.FlexBox({
-											alignItems: "Center",
-											justifyContent: "Center",
-											items: [
-												new sap.m.Button({
-													textAlign: "Center",
-													id: "json" + i,
-													text: "View JSON",
-													press: [this.viewJSON, this]
-												})
-											]
-										})
-									]
-								})
-							]
-						})
+					header: new sap.m.FlexBox({
+						alignItems: "Center",
+						justifyContent: "Center",
+						items: [
+							new sap.m.VBox({
+								items: [
+									new sap.m.Label({
+										textAlign: "Center",
+										width: "100%",
+										text: urls[0].name
+									}),
+									new sap.m.FlexBox({
+										alignItems: "Center",
+										justifyContent: "Center",
+										items: [
+											new sap.m.Button({
+												textAlign: "Center",
+												id: "json" + 0,
+												text: "View JSON",
+												press: [this.viewJSON, this]
+											})
+										]
+									})
+								]
+							})
+						]
+					})
 	
 					}));
-					cells[i] = new sap.m.HBox({
-					items: [
-						new sap.m.VBox({
-							width: "50%",
-							items: [new sap.m.Label({
-								text: "{label/" + i + "}",
-								design: "Bold"
-							})]
-						}),
+					cells[0] = new sap.m.HBox({
+						items: [
+							new sap.m.VBox({
+								width: "50%",
+								items: [new sap.m.Label({
+									text: "{label/" + 0 + "}",
+									design: "Bold"
+								})]
+							}),
 
-						new sap.m.VBox({
-							width: "30%",
-							items: [new RadialMicroChart({
-								size: "L",
-								percentage: "{score/" + i + "}"
-							})]
-						})
-					]
-				});
+							new sap.m.VBox({
+								width: "30%",
+								items: [new RadialMicroChart({
+									size: "L",
+									percentage: "{score/" + 0 + "}"
+								})]
+							})
+						]
+					});
 				
-				this.generateRequest(i, urls[i], oView, oBusyIndicator);
+					this.generateRequest(0, urls, oView, oBusyIndicator);
 				
-				}
+				// }
+
 				table.bindItems("/results", new sap.m.ColumnListItem({
 					cells: cells
 				}));
@@ -156,7 +158,7 @@ sap.ui.define([
 			data.append("files", oView.byId("fileUploader").oFileUpload.files[0]);
 			$.ajax({
 				"async": true,
-				"url": service.url,
+				"url": service[0].url,
 				"method": "POST",
 				// "headers": service.headers,
 				"processData": false,

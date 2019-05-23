@@ -2,14 +2,14 @@
 	"urls": [
 		{
 			"name": "face-feature-extraction",
-			"url": "/ml/api/v2alpha1/image/face-feature-extraction",
+			"url": "/ml-face/api/v2alpha1/image",
 			"headers": {
 				"APIKey": "mCfiGPMAXJVNXKgujL4BDX0X5lK9UtOB"
 			}
 		},
 		{
 			"name": "similarity-scoring",
-			"url": "/ml/api/v2//similarity-scoring",
+			"url": "/ml-similarity/api/v2",
 			"headers": {
 				"APIKey": "mCfiGPMAXJVNXKgujL4BDX0X5lK9UtOB"
 			}
