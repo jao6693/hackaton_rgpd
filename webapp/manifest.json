@@ -56,14 +56,18 @@
 				"settings": {
 					"bundleName": "dlw.hackaton_rgpd.i18n.i18n"
 				}
+			},
+			"settings": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "model/settings.json",
+				"preload": true
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -75,26 +79,16 @@
 				"controlId": "app",
 				"clearControlAggregation": false
 			},
-			"routes": [
-				{
-					"name": "RouteApp",
-					"pattern": "RouteApp",
-					"target": [
-						"TargetApp"
-					]
-				}
-			],
+			"routes": [{
+				"name": "RouteApp",
+				"pattern": "",
+				"target": ["Main"]
+			}],
 			"targets": {
-				"TargetApp": {
-					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewId": "App",
-					"viewName": "App"
-				},
 				"Main": {
 					"viewType": "XML",
-					"viewName": "Main"
+					"viewName": "Main",
+					"viewId": "Main"
 				}
 			}
 		}
